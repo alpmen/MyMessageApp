@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMessageApp", "MyMessageApp\MyMessageApp.csproj", "{7546E414-628E-4953-9BA8-1280F25338D6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMessageApp.Data", "MyMessageApp.Data\MyMessageApp.Data.csproj", "{28F7914F-E1CF-4771-9FE6-F0C93F624D88}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMessageApp.Core", "MyMessageApp.Core\MyMessageApp.Core.csproj", "{900009CD-8E52-45E4-ABA8-E41A56826149}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMessageApp.Service", "MyMessageApp.Service\MyMessageApp.Service.csproj", "{007A54B9-3E2E-4CC6-82C2-33CA5B3CA5CA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyMessageApp.Data.Domain", "MyMessageApp.Data.Domain\MyMessageApp.Data.Domain.csproj", "{EB70FCE7-7AF2-49CF-8501-A4E0619ABC94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyMessageApp.Service.Cache", "MyMessageApp.Service.Cache\MyMessageApp.Service.Cache.csproj", "{9408081D-057F-4527-9198-2E0018479C9F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7546E414-628E-4953-9BA8-1280F25338D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7546E414-628E-4953-9BA8-1280F25338D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7546E414-628E-4953-9BA8-1280F25338D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7546E414-628E-4953-9BA8-1280F25338D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28F7914F-E1CF-4771-9FE6-F0C93F624D88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28F7914F-E1CF-4771-9FE6-F0C93F624D88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28F7914F-E1CF-4771-9FE6-F0C93F624D88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28F7914F-E1CF-4771-9FE6-F0C93F624D88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{900009CD-8E52-45E4-ABA8-E41A56826149}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{900009CD-8E52-45E4-ABA8-E41A56826149}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{900009CD-8E52-45E4-ABA8-E41A56826149}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{900009CD-8E52-45E4-ABA8-E41A56826149}.Release|Any CPU.Build.0 = Release|Any CPU
+		{007A54B9-3E2E-4CC6-82C2-33CA5B3CA5CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{007A54B9-3E2E-4CC6-82C2-33CA5B3CA5CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{007A54B9-3E2E-4CC6-82C2-33CA5B3CA5CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{007A54B9-3E2E-4CC6-82C2-33CA5B3CA5CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB70FCE7-7AF2-49CF-8501-A4E0619ABC94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB70FCE7-7AF2-49CF-8501-A4E0619ABC94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB70FCE7-7AF2-49CF-8501-A4E0619ABC94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB70FCE7-7AF2-49CF-8501-A4E0619ABC94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9408081D-057F-4527-9198-2E0018479C9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9408081D-057F-4527-9198-2E0018479C9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9408081D-057F-4527-9198-2E0018479C9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9408081D-057F-4527-9198-2E0018479C9F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7854BBCE-245E-42B3-823C-D840FF92E300}
+	EndGlobalSection
+EndGlobal
