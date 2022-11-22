@@ -10,7 +10,7 @@ namespace MyMessageApp.Service.MessageAppServices.MessageService
         Task Remove(object id);
         Task Update(MessageUpdateRequest dto);
         Task<List<MessagesListAllResult>> ListAllMessages();
-        Task<List<MessagesPrivateListByFilterResult>> PrivateListByFilter(string content);
-        Task<List<MessagesPrivateListByFilterResult>> PrivateList();
+        Task<List<MessagesListByUserIdAndFilterResult>> ListByUserIdAndFilter(string content);
+        Task<List<MessagesListByUserIdAndFilterResult>> ListByUserId();
     }
 }

@@ -40,11 +40,6 @@ namespace MyMessageApp.Service.MessageAppServices.UserRoleService
             return _mapper.Map<List<UserRoleListAllResult>>(await _userRoleRepository.GetAllAsync());
         }
 
-        public async Task<List<UserRoleGetByFilterResult>> GetByFilter(Expression<Func<UserRole, bool>> filter)
-        {
-            return _mapper.Map<List<UserRoleGetByFilterResult>>(await _userRoleRepository.FindListAsync(filter));
-        }
-
         public async Task<UserRoleGetByIdResult> GetById(object id)
         {
             return _mapper.Map<UserRoleGetByIdResult>(await _userRoleRepository.GetByID(id));

@@ -7,7 +7,7 @@ namespace MyMessageApp.Data.MessageRepository.EFCoreRepositories
     public interface IMessageRepository : IRepositoryBase<Message>
     {
         Task<List<MessagesListAllResult>> ListAll();
-        Task<List<MessagesPrivateListByFilterResult>> ListPrivate(int id, string content = null);
+        Task<List<MessagesListByUserIdAndFilterResult>> ListPrivate(int UserId, string content = null);
         Task<MessagesGetDetailByIdResult> GetDetailById(object id);
     }
 }

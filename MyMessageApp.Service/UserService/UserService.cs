@@ -52,9 +52,9 @@ namespace MyMessageApp.Service.MessageAppServices.UserService
             }
         }
 
-        public async Task<List<UsersListAllResponse>> ListAll()
+        public async Task<List<UsersListAllResult>> ListAll()
         {
-            return _mapper.Map<List<UsersListAllResponse>>(await _userCacheService.GetUserList());
+            return _mapper.Map<List<UsersListAllResult>>(await _userCacheService.GetUserList());
         }
 
         public async Task<User> GetByEmailandPassword(string email, string password)

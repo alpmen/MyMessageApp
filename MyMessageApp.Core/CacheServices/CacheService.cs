@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MyMessageApp.Core.CacheServices
 {
-    public class CacheService: ICacheService
+    public class CacheService : ICacheService
     {
         private readonly IMemoryCache _memoryCache;
         private static CancellationTokenSource _resetCacheToken = new CancellationTokenSource();
@@ -23,6 +23,7 @@ namespace MyMessageApp.Core.CacheServices
         public T Set<T>(object key, T value, int expirationInMinutes = 60)
         {
             MemoryCacheEntryOptions options = new MemoryCacheEntryOptions().SetPriority(CacheItemPriority.Normal).SetAbsoluteExpiration(TimeSpan.FromMinutes(expirationInMinutes));
+
             options.AddExpirationToken(new CancellationChangeToken(_resetCacheToken.Token));
             _memoryCache.Set(key, value, options);
             return value;

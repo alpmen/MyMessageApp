@@ -28,7 +28,7 @@ namespace MyMessageApp.Controllers
         [ProducesResponseType(404, Type = typeof(ErrorResultModel))]
         [ProducesResponseType(500, Type = typeof(ErrorResultModel))]
         [PageRoleAction(PageRoleActionType.Write)]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Remove(int id)
         {
             await _messageService.Remove(id);
 
@@ -52,7 +52,7 @@ namespace MyMessageApp.Controllers
         [ProducesResponseType(200, Type = typeof(List<MessagesListAllResult>))]
         [ProducesResponseType(500, Type = typeof(ErrorResultModel))]
         [PageRoleAction(PageRoleActionType.Write)]
-        public async Task<IActionResult> ListAllMessages()
+        public async Task<IActionResult> ListAll()
         {
             var messageList = await _messageService.ListAllMessages();
 
@@ -60,18 +60,18 @@ namespace MyMessageApp.Controllers
         }
 
         [HttpGet("search/{content}")]
-        [ProducesResponseType(200, Type = typeof(List<MessagesPrivateListByFilterResult>))]
+        [ProducesResponseType(200, Type = typeof(List<MessagesListByUserIdAndFilterResult>))]
         [ProducesResponseType(500, Type = typeof(ErrorResultModel))]
         public async Task<IActionResult> GetByFilter(string content)
         {
-            var result = await _messageService.PrivateListByFilter(content);
+            var result = await _messageService.ListByUserIdAndFilter(content);
 
             return Ok(result);
         }
 
         [HttpPost]
         [PageRoleAction(PageRoleActionType.Write)]
-        public async Task Post([FromBody] MessageCreateRequest messageCreateDto)
+        public async Task Create([FromBody] MessageCreateRequest messageCreateDto)
         {
             await _messageService.Create(messageCreateDto);
         }
@@ -82,7 +82,7 @@ namespace MyMessageApp.Controllers
         [ProducesResponseType(404, Type = typeof(ErrorResultModel))]
         [ProducesResponseType(500, Type = typeof(ErrorResultModel))]
         [PageRoleAction(PageRoleActionType.Write)]
-        public async Task<IActionResult> Put([FromBody] MessageUpdateRequest updateDto)
+        public async Task<IActionResult> Update([FromBody] MessageUpdateRequest updateDto)
         {
             await _messageService.Update(updateDto);
 
@@ -90,11 +90,11 @@ namespace MyMessageApp.Controllers
         }
 
         [HttpGet]
-        [ProducesResponseType(200, Type = typeof(List<MessagesPrivateListResult>))]
+        [ProducesResponseType(200, Type = typeof(List<MessagesListByUserIdResult>))]
         [ProducesResponseType(500, Type = typeof(ErrorResultModel))]
-        public async Task<IActionResult> ListUserMessages()
+        public async Task<IActionResult> ListByUserId()
         {
-            var results = await _messageService.PrivateList();
+            var results = await _messageService.ListByUserId();
 
             return Ok(results);
         }

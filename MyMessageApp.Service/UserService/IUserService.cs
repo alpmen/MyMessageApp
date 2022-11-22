@@ -6,7 +6,7 @@ namespace MyMessageApp.Service.MessageAppServices.UserService
 {
     public interface IUserService
     {
-        Task<List<UsersListAllResponse>> ListAll();
+        Task<List<UsersListAllResult>> ListAll();
         Task Create(UserCreateRequest userCreateDto);
         Task<UserGetByIdResponse> GetById(object id);
         Task Remove(object id);

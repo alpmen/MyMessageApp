@@ -124,12 +124,12 @@ namespace MyMessageApp.Service.MessageAppServices.MessageService
             }
         }
 
-        public async Task<List<MessagesPrivateListByFilterResult>> PrivateListByFilter(string content)
+        public async Task<List<MessagesListByUserIdAndFilterResult>> ListByUserIdAndFilter(string content)
         {
             return await _messageCacheService.GetUserMessageList(_apiContext.UserId, content);
         }
 
-        public async Task<List<MessagesPrivateListByFilterResult>> PrivateList()
+        public async Task<List<MessagesListByUserIdAndFilterResult>> ListByUserId()
         {
             return await _messageCacheService.GetUserMessageList(_apiContext.UserId);
         }

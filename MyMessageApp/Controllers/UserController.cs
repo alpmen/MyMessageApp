@@ -22,9 +22,9 @@ namespace MyMessageApp.Controllers
         }
 
         [HttpGet]
-        [ProducesResponseType(200, Type = typeof(List<UsersListAllResponse>))]
+        [ProducesResponseType(200, Type = typeof(List<UsersListAllResult>))]
         [ProducesResponseType(500, Type = typeof(ErrorResultModel))]
-        public async Task<IActionResult> ListAllUsers()
+        public async Task<IActionResult> ListAll()
         {
             var results = await _userService.ListAll();
 
@@ -44,7 +44,7 @@ namespace MyMessageApp.Controllers
 
         [HttpPost]
         [PageRoleAction(PageRoleActionType.Write)]
-        public async Task CreateUser(UserCreateRequest dto)
+        public async Task Create(UserCreateRequest dto)
         {
             await _userService.Create(dto);
         }
@@ -67,7 +67,7 @@ namespace MyMessageApp.Controllers
         [ProducesResponseType(400, Type = typeof(ErrorResultModel))]
         [ProducesResponseType(404, Type = typeof(ErrorResultModel))]
         [ProducesResponseType(500, Type = typeof(ErrorResultModel))]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Remove(int id)
         {
             await _userService.Remove(id);
 

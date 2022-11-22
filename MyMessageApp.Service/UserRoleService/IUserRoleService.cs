@@ -8,7 +8,6 @@ namespace MyMessageApp.Service.MessageAppServices.UserRoleService
     public interface IUserRoleService
     {
         Task<List<UserRoleListAllResult>> ListAll();
-        Task<List<UserRoleGetByFilterResult>> GetByFilter(Expression<Func<UserRole, bool>> filter);
         Task Create(UserRoleCreateRequest userRoleCreateDto);
         Task<UserRoleGetByIdResult> GetById(object id);
         Task Remove(object id);

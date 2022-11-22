@@ -1,6 +1,6 @@
 ﻿namespace MyMessageApp.Data.MessageRepository.Dtos.Response
 {
-    public class MessagesPrivateListByFilterResult
+    public class MessagesListByUserIdAndFilterResult
     {
         public int Id { get; set; }
         public int? ReceiverId { get; set; }

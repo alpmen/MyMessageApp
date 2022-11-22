@@ -19,16 +19,16 @@ namespace MyMessageApp.Data.MessageRepository.EFCoreRepositories
         {
         }
 
-        public async Task<List<MessagesPrivateListByFilterResult>> ListPrivate(int id, string content = null)
+        public async Task<List<MessagesListByUserIdAndFilterResult>> ListPrivate(int UserId, string content = null)
         {
-            return await _collection.Select(x => new MessagesPrivateListByFilterResult
+            return await _collection.Select(x => new MessagesListByUserIdAndFilterResult
             {
                 Id = x.Id,
                 SenderEmail = x.Sender.Email,
                 ReceiverId = x.ReceiverId,
                 CreatedDate = (DateTime)x.Date,
                 Content = x.Content
-            }).Where(x => (x.ReceiverId == id || x.ReceiverId == null) && (content == null || x.Content.Contains(content))).ToListAsync();
+            }).Where(x => (x.ReceiverId == UserId || x.ReceiverId == null) && (content == null || x.Content.Contains(content))).ToListAsync();
         }
 
         public async Task<List<MessagesListAllResult>> ListAll()

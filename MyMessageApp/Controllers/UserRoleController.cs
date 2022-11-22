@@ -25,7 +25,7 @@ namespace MyMessageApp.Controllers
         [HttpGet]
         [ProducesResponseType(200, Type = typeof(List<UserRoleListAllResult>))]
         [ProducesResponseType(500, Type = typeof(ErrorResultModel))]
-        public async Task<IActionResult> ListAllUserRoles()
+        public async Task<IActionResult> ListAll()
         {
             var results = await _userRoleService.ListAll();
 
@@ -48,7 +48,7 @@ namespace MyMessageApp.Controllers
         [ProducesResponseType(400, Type = typeof(ErrorResultModel))]
         [ProducesResponseType(404, Type = typeof(ErrorResultModel))]
         [ProducesResponseType(500, Type = typeof(ErrorResultModel))]
-        public async Task<IActionResult> Del(int id)
+        public async Task<IActionResult> Remove(int id)
         {
             await _userRoleService.Remove(id);
 

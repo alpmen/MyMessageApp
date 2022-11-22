@@ -19,24 +19,24 @@ namespace MyMessageApp.Service.Cache.UserCacheServices
             _userRepository = userRepository;
         }
 
-        public async Task<List<UsersListAllResponse>> GetUserList()
+        public async Task<List<UsersListAllResult>> GetUserList()
         {
-            List<UsersListAllResponse> Users = new List<UsersListAllResponse>();
-            List<UsersListAllResponse> cachedData = _cacheManager.Get<List<UsersListAllResponse>>("UserList");
+            List<UsersListAllResult> Users = new List<UsersListAllResult>();
+            List<UsersListAllResult> cachedData = _cacheManager.Get<List<UsersListAllResult>>("UserList");
             if (cachedData != null && cachedData.Any())
             {
                 Users = cachedData;
             }
             else
             {
-                Users = _mapper.Map<List<UsersListAllResponse>>(await _userRepository.GetAllAsync());
+                Users = _mapper.Map<List<UsersListAllResult>>(await _userRepository.GetAllAsync());
                 var options = new MemoryCacheEntryOptions
                 {
                     AbsoluteExpiration = DateTimeOffset.Now.AddMinutes(1),
                     Priority = CacheItemPriority.High
                 };
                 // Listeyi doldurduktan sonra Cache Manager ile kayıt işlemimizi yaptık.
-                _cacheManager.Set<List<UsersListAllResponse>>("UserList", Users);
+                _cacheManager.Set<List<UsersListAllResult>>("UserList", Users);
             }
             return Users;
         }

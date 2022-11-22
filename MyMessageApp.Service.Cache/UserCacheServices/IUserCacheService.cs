@@ -4,6 +4,6 @@ namespace MyMessageApp.Service.Cache.UserCacheServices
 {
     public interface IUserCacheService
     {
-        public Task<List<UsersListAllResponse>> GetUserList();
+        public Task<List<UsersListAllResult>> GetUserList();
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace MyMessageApp.Data.UserRepository.Dtos.Response
 {
-    public class UsersListAllResponse
+    public class UsersListAllResult
     {
         public int Id { get; set; }
         public string Email { get; set; } = null!;

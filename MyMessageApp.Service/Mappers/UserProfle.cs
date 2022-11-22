@@ -11,7 +11,7 @@ namespace MyMessageApp.Service.Mappers
         {
             CreateMap<User, UserCreateRequest>().ReverseMap();
             CreateMap<User, UserUpdateRequest>().ReverseMap();
-            CreateMap<User, UsersListAllResponse>().ReverseMap();
+            CreateMap<User, UsersListAllResult>().ReverseMap();
             CreateMap<User, UserGetByIdResponse>().ReverseMap();
         }
     }
