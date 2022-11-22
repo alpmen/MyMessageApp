@@ -46,7 +46,7 @@ namespace MyMessageApp.Service.MessageAppServices.MessageService
 
             var getUsersByFilterKey = String.Format("{0}_{1}_{2}", CacheGroupType.Messages, CachePrefixType.UserMessagesByFilter.ToString(), _apiContext.UserId);
 
-            if (messageCreateDto.ReceiverId==0)
+            if (messageCreateDto.ReceiverId == 0)
             {
                 entity.ReceiverId = null;
             }
@@ -61,10 +61,15 @@ namespace MyMessageApp.Service.MessageAppServices.MessageService
             }
             else
             {
-                    //kişiye ait özel mesajlar mesajlar cacheden silinecek
+                if (messageCreateDto.ReceiverId != 0)
+                {
                     _cacheManager.Clear(getByUserIdKey);
-                    _cacheManager.Clear(allMessagesKey);   
-                    _cacheManager.Clear(getUsersByFilterKey);   
+                    _cacheManager.Clear(getUsersByFilterKey);
+                }
+                else
+                {
+                    _cacheManager.Clear(allMessagesKey);
+                }
             }
         }
 
