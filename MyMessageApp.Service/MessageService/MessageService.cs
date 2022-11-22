@@ -42,9 +42,9 @@ namespace MyMessageApp.Service.MessageAppServices.MessageService
 
             var allMessagesKey = String.Format("{0}_{1}_{2}", CacheGroupType.Messages, CachePrefixType.GeneralMessages.ToString(), _apiContext.UserId);
 
-            var getByUserIdKey = String.Format("{0}_{1}_{2}", CacheGroupType.Messages, CachePrefixType.UserMessages.ToString(), _apiContext.UserId);
+            var getByUserIdKey = String.Format("{0}_{1}_{2}", CacheGroupType.Messages, CachePrefixType.UserMessages.ToString(), entity.ReceiverId);
 
-            var getUsersByFilterKey = String.Format("{0}_{1}_{2}", CacheGroupType.Messages, CachePrefixType.UserMessagesByFilter.ToString(), _apiContext.UserId);
+            var getUsersByFilterKey = String.Format("{0}_{1}_{2}", CacheGroupType.Messages, CachePrefixType.UserMessagesByFilter.ToString(), entity.ReceiverId);
 
             if (messageCreateDto.ReceiverId == 0)
             {
