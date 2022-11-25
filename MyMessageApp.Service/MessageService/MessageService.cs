@@ -9,6 +9,7 @@ using MyMessageApp.Data.MessageRepository.Dtos.Request;
 using MyMessageApp.Data.MessageRepository.Dtos.Response;
 using MyMessageApp.Data.MessageRepository.EFCoreRepositories;
 using MyMessageApp.Service.Cache.MessageCacheServices;
+using System.Collections.Generic;
 using System.Net;
 
 namespace MyMessageApp.Service.MessageAppServices.MessageService
@@ -126,7 +127,9 @@ namespace MyMessageApp.Service.MessageAppServices.MessageService
 
         public async Task<List<MessagesListByUserIdAndFilterResult>> ListByUserIdAndFilter(string content)
         {
-            return await _messageCacheService.GetUserMessageList(_apiContext.UserId, content);
+            var list = await _messageCacheService.GetUserMessagesByFilter(_apiContext.UserId);
+
+            return list.Where(x => x.Content.Contains(content)).ToList();
         }
 
         public async Task<List<MessagesListByUserIdAndFilterResult>> ListByUserId()

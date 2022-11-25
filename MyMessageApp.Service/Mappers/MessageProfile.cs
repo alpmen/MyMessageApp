@@ -12,8 +12,8 @@ namespace MyMessageApp.Service.Mappers
             CreateMap<Message, MessageCreateRequest>().ReverseMap();
             CreateMap<Message, MessageUpdateRequest>().ReverseMap();
             CreateMap<Message, MessagesListAllResult>().ForMember(dest => dest.SenderEmail, opt => opt.MapFrom(src => src.Sender.Email)).ReverseMap();
-            CreateMap<Message, MessagesListByUserIdAndFilterResult>().ReverseMap();
             CreateMap<Message, MessagesListByUserIdResult>().ReverseMap();
+            CreateMap<Message, MessagesListByUserIdAndFilterResult>().ReverseMap();
         }
     }
 }

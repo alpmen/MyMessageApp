@@ -44,11 +44,9 @@ namespace MyMessageApp.Service.Cache.MessageCacheServices
             return messages;
         }
 
-        public async Task<List<MessagesListByUserIdAndFilterResult>> GetUserMessageList(int id, string content)
+        public async Task<List<MessagesListByUserIdAndFilterResult>> GetUserMessagesByFilter(int id)
         {
             var key = String.Format("{0}_{1}_{2}", CacheGroupType.Messages, CachePrefixType.UserMessagesByFilter.ToString(), _apiContext.UserId);
-
-            _cacheManager.Clear(key);
 
             List<MessagesListByUserIdAndFilterResult> Messages = new List<MessagesListByUserIdAndFilterResult>();
 
@@ -60,7 +58,7 @@ namespace MyMessageApp.Service.Cache.MessageCacheServices
             }
             else
             {
-                Messages = _mapper.Map<List<MessagesListByUserIdAndFilterResult>>(await _messageRepository.ListPrivate(id, content));
+                Messages = _mapper.Map<List<MessagesListByUserIdAndFilterResult>>(await _messageRepository.ListPrivate(id));
 
                 _cacheManager.Set(key, Messages);
             }
